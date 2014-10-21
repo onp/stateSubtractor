@@ -1,0 +1,1 @@
+extremely basic interface to allow subtraction of binary state patterns.

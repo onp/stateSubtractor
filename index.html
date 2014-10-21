@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<head>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="script.js"></script>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.0/normalize.min.css" />
+    
+    <style>
+        div#container{
+            width:750px;
+            margin: 0px auto;
+        }
+        
+        div#page-title{
+            width:100%;
+            font-size:90px;
+            text-align:center;
+        }
+        
+        p.instruction-text{
+            text-align:justify;
+        }
+        
+        form.entry{
+            border-bottom: 3px solid lightBlue;
+        }
+        
+        div.state-container{
+            border-radius: 5px;
+            border-width: 0px 2px;
+            border-style: solid;
+        }
+        
+        div.state-container.initial{
+            border-color: green;
+        }
+        div.state-container.subtracted{
+            border-color: red;
+        }
+        
+        div.state-container.result{
+            border-color: lightBlue;
+        }
+        
+        div.state-container-label{
+            float:right;
+            margin-right:25px;
+            margin-top:8px;
+            font-size:20px;
+        }
+        
+        div.operation-bar{
+            height:1px;
+            width:100%;
+            margin:5px 0px;
+            background-color:lightBlue;
+        }
+        
+        p.button-minus,
+        p.button-plus{
+            height:20px;
+            width:20px;
+            text-align:center;
+            font-size:18px;
+            line-height:20px;
+            border-radius:12px;
+            margin:0px;
+        }
+        
+        p.button-plus{
+            background-color:lightGreen;
+            border:2px solid green;
+            margin-left:40px;
+        }
+        
+        p.button-plus:hover{
+            background-color:green;
+        }
+        
+        p.button-minus{
+            background-color:pink;
+            border:2px solid red;
+            display:inline-block;
+            margin-left:5px;
+        }
+        
+        p.button-minus:hover{
+            background-color:red;
+        }
+        
+        ul.state-list li{
+            margin-bottom:5px;
+        }
+    
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="page-title">State Subtractor</div>
+        <div id="main-content">
+                <div class="collapsable">
+                    <p class="instruction-text">Enter strings describing the initial set of states and the states to be 
+                        subtracted. States should be entered using the characters "1","0", and "-", where "1" represents
+                        an option that is taken, "0" an option that is not taken, and "-" an option that can be in 
+                        either state. All strings entered must be of the same length for sucessful computation.
+                    </p>
+                </div>
+                <div class="state-container-label">Initial States</div>
+                <div class="state-container initial">
+                    <ul class="state-list">
+                        <li><input type="text"></input></li>
+                    </ul>
+                    <p class="button-plus"> + </p>
+                </div>
+                <div class="state-container-label">States to Subtract</div>
+                <div class="state-container subtracted">
+                    <ul class="state-list">
+                        <li><input type="text"></input></li>
+                    </ul>
+                    <p class="button-plus"> + </p>
+                </div>
+                <div class="operation-bar"></div>
+                <div class="state-container-label">Result</div>
+                <div class="state-container result">
+                    <ul class="state-list">result</ul>
+                </div>
+        
+        </div>
+    </div>
+</body>
+</html>
